@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="../../style/style.css" />
+    <title>Cooperados</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light bg-secondary fixed-top">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand text-orange" href="home-sistema-interno.html"
+          >Coonaserv</a
+        >
+        <div
+          class="offcanvas offcanvas-start"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Coonaserv</h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a
+                  class="nav-link link-hover"
+                  aria-current="page"
+                  href="cooperados.html"
+                  ><i class="bi bi-person-fill"></i> Cooperados</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="p-3" style="margin: 10vh 1% 1% 1%; background-color: #eee">
+      <div class="d-flex justify-content-between">
+        <h3><i class="bi bi-person-fill"></i> Cooperados</h3>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#modal-novo-cadastro"
+        >
+          Novo Cadastro
+        </button>
+      </div>
+      <hr />
+
+      <!-- Modal Novo Cadastro -->
+      <div
+        class="modal fade"
+        id="modal-novo-cadastro"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="modal-novo-cadastro-label"
+        aria-hidden="true"
+      >
+        <div
+          class="
+            modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl
+          "
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-novo-cadastro-label">
+                <i class="bi bi-person-plus-fill"></i> Novo Cadastro
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div id="cadastrar-funcao">
+                <h6>Selecione o tipo de cadastro</h6>
+                <div class="btn-group" role="group">
+                  <input
+                    autocomplete="off"
+                    type="radio"
+                    class="btn-check"
+                    name="options"
+                    value="Dispatcher"
+                    id="dispatcher-radio"
+                    autocomplete="off"
+                  />
+                  <label class="btn btn-secondary" for="dispatcher-radio"
+                    >Dispatcher</label
+                  >
+
+                  <input
+                    autocomplete="off"
+                    type="radio"
+                    class="btn-check"
+                    name="options"
+                    value="Motorista"
+                    id="motorista-radio"
+                    autocomplete="off"
+                  />
+                  <label class="btn btn-secondary" for="motorista-radio"
+                    >Motorista</label
+                  >
+
+                  <input
+                    autocomplete="off"
+                    type="radio"
+                    class="btn-check"
+                    name="options"
+                    value="Motoboy"
+                    id="motoboy-radio"
+                    autocomplete="off"
+                  />
+                  <label class="btn btn-secondary" for="motoboy-radio"
+                    >Motoboy</label
+                  >
+
+                  <input
+                    autocomplete="off"
+                    type="radio"
+                    class="btn-check"
+                    name="options"
+                    value="Entregador"
+                    id="entregador-radio"
+                    autocomplete="off"
+                  />
+                  <label class="btn btn-secondary" for="entregador-radio"
+                    >Entregador</label
+                  >
+                </div>
+              </div>
+
+              <form id="form-novo-cadastro" class="mt-3 d-none">
+                <h4 id="titulo-fun-cadastrada">
+                  <i class="bi bi-person-fill"></i>
+                  <span>Novo Cadastro</span>
+                </h4>
+                <hr />
+                <div class="d-flex flex-div">
+                  <div class="m-1 w-33">
+                    <label for="nome-novo-cadastro" class="form-label"
+                      >Nome:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="text"
+                      class="form-control shadow-none"
+                      id="nome-novo-cadastro"
+                      placeholder="Ex: José da Silva"
+                    />
+                  </div>
+                  <div class="m-1 w-33">
+                    <label for="cpf-novo-cadastro" class="form-label"
+                      >CPF:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="number"
+                      class="form-control shadow-none"
+                      id="cpf-novo-cadastro"
+                      placeholder="Ex: 000.000.000-00"
+                    />
+                  </div>
+                  <div class="m-1 w-33">
+                    <label for="rg-novo-cadastro" class="form-label">RG:</label>
+                    <input
+                      autocomplete="off"
+                      type="number"
+                      class="form-control shadow-none"
+                      id="rg-novo-cadastro"
+                      placeholder="Ex: 00.000.000-0"
+                    />
+                  </div>
+                </div>
+
+                <div class="d-flex flex-div">
+                  <div class="m-1 w-33">
+                    <label for="pis-pasep-novo-cadastro" class="form-label"
+                      >Pis/Pasep:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="number"
+                      class="form-control shadow-none"
+                      id="pis-pasep-novo-cadastro"
+                      placeholder="Ex: 000.00000.00-0"
+                    />
+                  </div>
+                  <div class="m-1 w-33">
+                    <label for="data-nasc-novo-cadastro" class="form-label"
+                      >Data de nascimento:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="date"
+                      class="form-control shadow-none"
+                      id="data-nasc-novo-cadastro"
+                    />
+                  </div>
+                  <div class="m-1 w-33">
+                    <label for="email-novo-cadastro" class="form-label"
+                      >E-mail</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="email"
+                      class="form-control shadow-none"
+                      id="email-novo-cadastro"
+                      placeholder="Ex: exemplo@exemplo.com"
+                    />
+                  </div>
+                </div>
+
+                <div class="d-flex flex-div">
+                  <div class="m-1 w-33">
+                    <label for="contato-novo-cadastro" class="form-label"
+                      >Telefone:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="number"
+                      class="form-control shadow-none"
+                      id="contato-novo-cadastro"
+                      placeholder="Ex: (00) 00000-0000"
+                    />
+                  </div>
+                  <div class="m-1 w-33">
+                    <label for="nome-mae-novo-cadastro" class="form-label"
+                      >Nome da mãe:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="text"
+                      class="form-control shadow-none"
+                      id="nome-mae-novo-cadastro"
+                      placeholder="Maria da Silva"
+                    />
+                  </div>
+                  <div class="m-1 w-33">
+                    <label for="naturalidade-cadastro" class="form-label"
+                      >Naturalidade:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="text"
+                      class="form-control shadow-none"
+                      id="naturalidade-cadastro"
+                      placeholder="Ex: Brasileiro"
+                    />
+                  </div>
+                </div>
+
+                <h4 class="mt-4">
+                  <i class="bi bi-geo-alt-fill"></i> Endereço
+                </h4>
+                <hr />
+
+                <div class="d-flex flex-div">
+                  <div class="m-1 w-33">
+                    <label for="longradouro-novo-cadastro" class="form-label"
+                      >Longradouro:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="text"
+                      class="form-control shadow-none"
+                      id="longradouro-novo-cadastro"
+                      placeholder="Ex: Rua..."
+                    />
+                  </div>
+                  <div class="m-1 numero-local">
+                    <label for="numero-local-novo-cadastro" class="form-label"
+                      >Número:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="number"
+                      class="form-control shadow-none"
+                      id="numero-local-novo-cadastro"
+                      placeholder="Ex: 1046"
+                    />
+                  </div>
+
+                  <div class="m-1 w-25">
+                    <label for="bairro-novo-cadastro" class="form-label"
+                      >Bairro:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="text"
+                      class="form-control shadow-none"
+                      id="bairro-novo-cadastro"
+                      placeholder="Ex: Bela Vista"
+                    />
+                  </div>
+
+                  <div class="m-1 w-25">
+                    <label for="cidade-novo-cadastro" class="form-label"
+                      >Cidade:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="text"
+                      class="form-control shadow-none"
+                      id="cidade-novo-cadastro"
+                      placeholder="Ex: São Paulo"
+                    />
+                  </div>
+                </div>
+
+                <div class="d-flex flex-div">
+                  <div class="m-1 w-25">
+                    <label for="estado-novo-cadastro" class="form-label"
+                      >Estado/UF:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="text"
+                      class="form-control shadow-none"
+                      id="estado-novo-cadastro"
+                      placeholder="Ex: SP"
+                      maxlength="2"
+                    />
+                  </div>
+                  <div class="m-1 w-25">
+                    <label for="cep-novo-cadastro" class="form-label"
+                      >CEP:</label
+                    >
+                    <input
+                      autocomplete="off"
+                      type="number"
+                      class="form-control shadow-none"
+                      id="cep-novo-cadastro"
+                      placeholder="Ex: 00000-000"
+                    />
+                  </div>
+                </div>
+
+                <div id="campo-cnh" class="d-none">
+                  <h4 class="mt-4">
+                    <i class="bi bi-file-earmark-image"></i> Foto CNH
+                  </h4>
+                  <hr />
+                  <div class="d-flex flex-div">
+                    <div class="mx-1 mb-3 w-50">
+                      <label for="ft-frente-cnh" class="form-label"
+                        >Foto da frente</label
+                      >
+                      <input
+                        autocomplete="off"
+                        class="form-control"
+                        type="file"
+                        id="ft-frente-cnh"
+                      />
+                    </div>
+                    <div class="mx-1 mb-3 w-50">
+                      <label for="ft-verso-cnh" class="form-label"
+                        >Foto do verso</label
+                      >
+                      <input
+                        autocomplete="off"
+                        class="form-control"
+                        type="file"
+                        id="ft-verso-cnh"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex mt-3 justify-content-end"></div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary mx-1" id="cadastrar">
+                <i class="bi bi-check-circle"></i> Cadastrar
+              </button>
+              <button
+                type="button"
+                onclick="resetFormulario()"
+                class="btn btn-danger"
+                id="limpar-cadastro"
+              >
+                <i class="bi bi-trash"></i> Limpar
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-2 d-flex justify-content-center border-bottom">
+        <span class="w-33 text-center">Matricula</span>
+        <span class="w-33 text-center">Cooperado</span>
+        <span class="w-33 text-center">Função</span>
+      </div>
+
+      <!-- Lista de cooperados -->
+      <div
+        class="
+          d-flex
+          flex-column
+          justify-content-between
+          align-items-center
+          p-1
+          mt-1
+        "
+      >
+        <button
+          type="button"
+          class="
+            m-1
+            btn
+            w-100
+            mx-auto
+            bg-light
+            d-flex
+            justify-content-center
+            border
+          "
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <span class="w-33 text-center">01</span>
+          <spa class="w-33 text-center">Teste</spa>
+          <spa class="w-33 text-center">motorista</spa>
+        </button>
+        <button
+          type="button"
+          class="
+            m-1
+            btn
+            w-100
+            mx-auto
+            d-flex
+            justify-content-center
+            border
+            bg-secondary
+          "
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <span class="w-33 text-center">02</span>
+          <spa class="w-33 text-center"
+            >Testeeeeeeeeeeeee Testeeeeeeeeeeeee</spa
+          >
+          <spa class="w-33 text-center">motorista</spa>
+        </button>
+
+        <button
+          type="button"
+          class="
+            m-1
+            btn
+            w-100
+            mx-auto
+            bg-light
+            d-flex
+            justify-content-center
+            border
+          "
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          <span class="w-33 text-center">03</span>
+          <spa class="w-33 text-center">Teste</spa>
+          <spa class="w-33 text-center">motorista</spa>
+        </button>
+        <hr />
+      </div>
+
+      <!-- Modal detalhes do cooperado -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Cooperado: Teste
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">Dados do funcionario</div>
+            <div class="modal-footer">
+              <button
+                id="editar-cooperado"
+                type="button"
+                class="btn btn-warning mx-1"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Editar cadastro"
+              >
+                <i class="bi bi-pencil-square"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
+                Deleter
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal editar cadastro -->
+    <div
+      class="modal fade"
+      id="modal-editar-cadastro"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="modal-editar-cadastro-label"
+      aria-hidden="true"
+    >
+      <div
+        class="
+          modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl
+        "
+      >
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-editar-cadastro-label">
+              <i class="bi bi-person-plus-fill"></i> Editar Cadastro
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="editar-funcao">
+              <h6>Tipo de cadastro</h6>
+              <div class="btn-group" role="group">
+                <input
+                  autocomplete="off"
+                  type="radio"
+                  class="btn-check"
+                  name="options-update"
+                  value="Dispatcher"
+                  id="editar-dispatcher-radio"
+                  autocomplete="off"
+                />
+                <label class="btn btn-secondary" for="editar-dispatcher-radio"
+                  >Dispatcher</label
+                >
+
+                <input
+                  autocomplete="off"
+                  type="radio"
+                  class="btn-check"
+                  name="options-update"
+                  value="Motorista"
+                  id="editar-motorista-radio"
+                  autocomplete="off"
+                />
+                <label class="btn btn-secondary" for="editar-motorista-radio"
+                  >Motorista</label
+                >
+
+                <input
+                  autocomplete="off"
+                  type="radio"
+                  class="btn-check"
+                  name="options-update"
+                  value="Motoboy"
+                  id="editar-motoboy-radio"
+                  autocomplete="off"
+                />
+                <label class="btn btn-secondary" for="editar-motoboy-radio"
+                  >Motoboy</label
+                >
+
+                <input
+                  autocomplete="off"
+                  type="radio"
+                  class="btn-check"
+                  name="options-update"
+                  value="Entregador"
+                  id="editar-entregador-radio"
+                  autocomplete="off"
+                />
+                <label class="btn btn-secondary" for="editar-entregador-radio"
+                  >Entregador</label
+                >
+              </div>
+            </div>
+
+            <form id="form-editar-cadastro" class="mt-3">
+              <h4 id="titulo-fun-cadastrada">
+                <i class="bi bi-person-fill"></i>
+                <span>Editar Cadastro</span>
+              </h4>
+              <hr />
+              <div class="d-flex flex-div">
+                <div class="m-1 w-33">
+                  <label for="nome-novo-cadastro" class="form-label"
+                    >Nome:</label
+                  >
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    class="form-control shadow-none"
+                    id="nome-novo-cadastro"
+                    placeholder="Ex: José da Silva"
+                  />
+                </div>
+                <div class="m-1 w-33">
+                  <label for="cpf-novo-cadastro" class="form-label">CPF:</label>
+                  <input
+                    autocomplete="off"
+                    type="number"
+                    class="form-control shadow-none"
+                    id="cpf-novo-cadastro"
+                    placeholder="Ex: 000.000.000-00"
+                  />
+                </div>
+                <div class="m-1 w-33">
+                  <label for="rg-novo-cadastro" class="form-label">RG:</label>
+                  <input
+                    autocomplete="off"
+                    type="number"
+                    class="form-control shadow-none"
+                    id="rg-novo-cadastro"
+                    placeholder="Ex: 00.000.000-0"
+                  />
+                </div>
+              </div>
+
+              <div class="d-flex flex-div">
+                <div class="m-1 w-33">
+                  <label for="pis-pasep-novo-cadastro" class="form-label"
+                    >Pis/Pasep:</label
+                  >
+                  <input
+                    autocomplete="off"
+                    type="number"
+                    class="form-control shadow-none"
+                    id="pis-pasep-novo-cadastro"
+                    placeholder="Ex: 000.00000.00-0"
+                  />
+                </div>
+                <div class="m-1 w-33">
+                  <label for="data-nasc-novo-cadastro" class="form-label"
+                    >Data de nascimento:</label
+                  >
+                  <input
+                    autocomplete="off"
+                    type="date"
+                    class="form-control shadow-none"
+                    id="data-nasc-novo-cadastro"
+                  />
+                </div>
+                <div class="m-1 w-33">
+                  <label for="email-novo-cadastro" class="form-label"
+                    >E-mail</label
+                  >
+                  <input
+                    autocomplete="off"
+                    type="email"
+                    class="form-control shadow-none"
+                    id="email-novo-cadastro"
+                    placeholder="Ex: exemplo@exemplo.com"
+                  />
+                </div>
+              </div>
+
+              <div class="d-flex flex-div">
+                <div class="m-1 w-33">
+                  <label for="contato-novo-cadastro" class="form-label"
+                    >Telefone:</label
+                  >
+                  <input
+                    autocomplete="off"
+                    type="number"
+                    class="form-control shadow-none"
+                    id="contato-novo-cadastro"
+                    placeholder="Ex: (00) 00000-0000"
+                  />
+                </div>
+                <div class="m-1 w-33">
+                  <label for="nome-mae-novo-cadastro" class="form-label"
+                    >Nome da mãe:</label
+                  >
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    class="form-control shadow-none"
+                    id="nome-mae-novo-cadastro"
+                    placeholder="Maria da Silva"
+                  />
+                </div>
+                <div class="m-1 w-33">
+                  <label for="naturalidade-cadastro" class="form-label"
+                    >Naturalidade:</label
+                  >
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    class="form-control shadow-none"
+                    id="naturalidade-cadastro"
+                    placeholder="Ex: Brasileiro"
+                  />
+                </div>
+              </div>
+
+              <h4 class="mt-4"><i class="bi bi-geo-alt-fill"></i> Endereço</h4>
+              <hr />
+
+              <div class="d-flex flex-div">
+                <div class="m-1 w-33">
+                  <label for="longradouro-novo-cadastro" class="form-label"
+                    >Longradouro:</label
+                  >
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    class="form-control shadow-none"
+                    id="longradouro-novo-cadastro"
+                    placeholder="Ex: Rua..."
+                  />
+                </div>
+                <div class="m-1 numero-local">
+                  <label for="numero-local-novo-cadastro" class="form-label"
+                    >Número:</label
+                  >
+                  <input
+                    autocomplete="off"
+                    type="number"
+                    class="form-control shadow-none"
+                    id="numero-local-novo-cadastro"
+                    placeholder="Ex: 1046"
+                  />
+                </div>
+
+                <div class="m-1 w-25">
+                  <label for="bairro-novo-cadastro" class="form-label"
+                    >Bairro:</label
+                  >
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    class="form-control shadow-none"
+                    id="bairro-novo-cadastro"
+                    placeholder="Ex: Bela Vista"
+                  />
+                </div>
+
+                <div class="m-1 w-25">
+                  <label for="cidade-novo-cadastro" class="form-label"
+                    >Cidade:</label
+                  >
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    class="form-control shadow-none"
+                    id="cidade-novo-cadastro"
+                    placeholder="Ex: São Paulo"
+                  />
+                </div>
+              </div>
+
+              <div class="d-flex flex-div">
+                <div class="m-1 w-25">
+                  <label for="estado-novo-cadastro" class="form-label"
+                    >Estado/UF:</label
+                  >
+                  <input
+                    autocomplete="off"
+                    type="text"
+                    class="form-control shadow-none"
+                    id="estado-novo-cadastro"
+                    placeholder="Ex: SP"
+                  />
+                </div>
+                <div class="m-1 w-25">
+                  <label for="cep-novo-cadastro" class="form-label">CEP:</label>
+                  <input
+                    autocomplete="off"
+                    type="number"
+                    class="form-control shadow-none"
+                    id="cep-novo-cadastro"
+                    placeholder="Ex: 00000-000"
+                  />
+                </div>
+              </div>
+
+              <div id="campo-cnh" class="d-none">
+                <h4 class="mt-4">
+                  <i class="bi bi-file-earmark-image"></i> Foto CNH
+                </h4>
+                <hr />
+                <div class="d-flex flex-div">
+                  <div class="mx-1 mb-3 w-50">
+                    <label for="ft-frente-cnh" class="form-label"
+                      >Foto da frente</label
+                    >
+                    <input
+                      autocomplete="off"
+                      class="form-control"
+                      type="file"
+                      id="ft-frente-cnh"
+                    />
+                  </div>
+                  <div class="mx-1 mb-3 w-50">
+                    <label for="ft-verso-cnh" class="form-label"
+                      >Foto do verso</label
+                    >
+                    <input
+                      autocomplete="off"
+                      class="form-control"
+                      type="file"
+                      id="ft-verso-cnh"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex mt-3 justify-content-end"></div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary mx-1" id="cadastrar">
+              <i class="bi bi-check-circle"></i> Cadastrar
+            </button>
+            <button
+              type="button"
+              onclick="resetFormulario()"
+              class="btn btn-danger"
+              id="limpar-cadastro"
+            >
+              <i class="bi bi-trash"></i> Limpar
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <a id="teste" class="btn btn-primary" role="button">Clicar </a>
+
+    <div
+      class="modal"
+      id="exampleModalToggle"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Show a second modal and hide this one with the button below.
+          </div>
+          <div class="modal-footer">
+            <button id="segundaModal" class="btn btn-primary">
+              segunda modal
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="exampleModalToggle2"
+      aria-hidden="true"
+      aria-labelledby="exampleModalToggleLabel2"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            Hide this modal and show the first with the button below.
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              Back to first
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a data-bs-toggle="modal" href="#myModal" class="btn btn-primary">Abrir</a>
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Modal 1</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-hidden="true"
+            ></button>
+          </div>
+          <div class="container"></div>
+          <div class="modal-body">
+            Alguma coisa aqui dentro.
+            <a data-bs-toggle="modal" href="#myModal2" class="btn btn-primary"
+              >Abrir</a
+            >
+          </div>
+          <div class="modal-footer">
+            <a href="#" data-bs-dismiss="modal" class="btn btn-danger"
+              >Fechar</a
+            >
+            <a href="#" class="btn btn-primary"
+              >Outro botão a ser implementado</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="myModal2">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              ×
+            </button>
+            <h4 class="modal-title">Modal 2</h4>
+          </div>
+          <div class="container"></div>
+          <div class="modal-body">
+            Alguma coisa aqui dentro.
+            <a data-bs-toggle="modal" href="#myModal3" class="btn btn-primary"
+              >Abrir</a
+            >
+          </div>
+          <div class="modal-footer">
+            <a href="#" data-bs-dismiss="modal" class="btn btn-danger"
+              >Fechar</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="myModal3">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              ×
+            </button>
+            <h4 class="modal-title">Modal 3</h4>
+          </div>
+          <div class="container"></div>
+          <div class="modal-body">Acho que até aqui deu pra compreender...</div>
+          <div class="modal-footer">
+            <a href="#" data-bs-dismiss="modal" class="btn btn-danger"
+              >Fechar</a
+            >
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/form.js"></script>
+  </body>
+</html>
